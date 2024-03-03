@@ -6,7 +6,8 @@ CONFIG -= qt
 QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.15
 
 SOURCES += \
-        dbmanagement-tests.cpp
+        dbmanagement-tests.cpp \
+        keyvalue-tests.cpp
 
 include(../kvdb/Defines.pri)
 
