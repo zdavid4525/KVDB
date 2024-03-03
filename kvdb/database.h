@@ -11,6 +11,10 @@ public:
     std::string get_directory(void);
 
     static Database create_empty(std::string db_name);
+
+protected:
+    std::string name;
+    std::string full_path;
 };
 
 #endif // DATABASE_H
