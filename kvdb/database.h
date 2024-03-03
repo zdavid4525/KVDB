@@ -10,7 +10,13 @@ public:
 
     std::string get_directory(void);
 
+    void set_key_value(std::string key, std::string value);
+
+    std::string get_key_value(std::string key);
+
     static Database create_empty(std::string db_name);
+
+    void destroy();
 
 protected:
     std::string name;
