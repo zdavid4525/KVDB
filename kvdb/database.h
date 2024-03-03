@@ -16,6 +16,8 @@ public:
 
     static Database create_empty(std::string db_name);
 
+    static Database load(std::string db_name);
+
     void destroy();
 
 protected:

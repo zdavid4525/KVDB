@@ -53,6 +53,13 @@ Database Database::create_empty(std::string db_name) {
     return Database(db_name, db_folder);
 }
 
+Database Database::load(std::string db_name) {
+    std::string base_dir(".kvdb");
+    std::string db_folder(base_dir + "/" + db_name);
+
+    return Database(db_name, db_folder);
+}
+
 void Database::destroy() {
     if (fs::exists(full_path)) {
         fs::remove_all(full_path);
