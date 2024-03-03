@@ -9,7 +9,7 @@ namespace fs = std::filesystem;
 TEST_CASE("store and retrieve a value", "[set_key_value,get_key_value]") {
     SECTION("basic set and get") {
         std::string db_name("emptydb");
-        Database db(KVDB::create_empty_DB(db_name));
+        kvdb::Database db(kvdb::KVDB::create_empty_DB(db_name));
 
         std::string key("key");
         std::string value("value");

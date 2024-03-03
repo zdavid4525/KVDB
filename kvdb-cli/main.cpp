@@ -3,6 +3,7 @@
 #include <kvdb.h>
 
 using namespace std;
+using namespace kvdb;
 
 cxxopts::Options options("kvdb-cli", "CLI for KVDB");
 

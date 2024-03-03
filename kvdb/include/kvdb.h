@@ -4,6 +4,8 @@
 #include <string>
 #include "database.h"
 
+namespace kvdb {
+
 class KVDB
 {
 public:
@@ -13,5 +15,7 @@ public:
 
     static Database load_db(std::string &db_name);
 };
+
+}
 
 #endif // KVDB_H

@@ -5,6 +5,7 @@
 #include <filesystem>
 
 namespace fs = std::filesystem;
+using namespace kvdb;
 
 Database::Database(std::string db_name, std::string full_path)
     : name(db_name), full_path(full_path)

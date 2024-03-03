@@ -3,6 +3,8 @@
 
 #include <string>
 
+namespace kvdb {
+
 class Database
 {
 public:
@@ -24,5 +26,7 @@ protected:
     std::string name;
     std::string full_path;
 };
+
+}
 
 #endif // DATABASE_H

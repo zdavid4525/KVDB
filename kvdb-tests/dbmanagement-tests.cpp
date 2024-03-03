@@ -11,7 +11,7 @@ TEST_CASE("create a empty, new database", "[create_empty_db]") {
     SECTION("Default settings") {
         std::string dbname("emptydb");
         // success when valid DB reference returned (this errors if not)
-        Database db(KVDB::create_empty_DB(dbname));
+        kvdb::Database db(kvdb::KVDB::create_empty_DB(dbname));
 
         // AND DB has a folder that exists in the file system
         REQUIRE(fs::is_directory(fs::status(db.get_directory())));
@@ -31,8 +31,8 @@ TEST_CASE("load an existing database", "[load_db]") {
         std::string db_name("emptydb");
 
         //success when a valid db reference is returned (below will err if this fails)
-        Database db(KVDB::create_empty_DB(db_name));
-        Database db2(KVDB::load_db(db_name));
+        kvdb::Database db(kvdb::KVDB::create_empty_DB(db_name));
+        kvdb::Database db2(kvdb::KVDB::load_db(db_name));
 
         // AND db has a folder that exists in the file system
         REQUIRE(fs::is_directory(fs::status(db2.get_directory())));
