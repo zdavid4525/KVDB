@@ -10,6 +10,8 @@ public:
     KVDB();
 
     static Database create_empty_DB(std::string &db_name);
+
+    static Database load_db(std::string &db_name);
 };
 
 #endif // KVDB_H
