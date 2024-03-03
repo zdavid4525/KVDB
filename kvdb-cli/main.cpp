@@ -92,6 +92,21 @@ int main(int argc, char* argv[])
         return 0;
     }
 
+    if (result.count("d") == 1) {
+        if (result.count("n") == 0) {
+            cout << "you must specify a db name. usage: ./kvdb-cli -s -n <name>" << endl;
+            print_usage();
+
+            return 1;
+        }
+
+        std::string db_name(result["n"].as<std::string>());
+        Database db(KVDB::load_db(db_name));
+
+        db.destroy();
+        return 0;
+    }
+
     cout << "no command specified" << endl;
     print_usage();
     return 1;
