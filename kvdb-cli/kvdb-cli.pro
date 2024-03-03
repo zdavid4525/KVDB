@@ -12,3 +12,6 @@ include(../kvdb/Defines.pri)
 
 macx:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../kvdb/ -lkvdb
 else: macx:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../kvdb/ -lkvdb
+
+HEADERS += \
+    cxxopts.hpp
