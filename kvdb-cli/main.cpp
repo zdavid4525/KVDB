@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
 
         std::string db_name(result["n"].as<std::string>());
 
-        Database db(KVDB::create_empty_DB(db_name));
+        std::unique_ptr<kvdb::IDatabase> db(KVDB::create_empty_DB(db_name));
         return 0;
     }
 
@@ -64,9 +64,9 @@ int main(int argc, char* argv[])
         std::string key(result["k"].as<std::string>());
         std::string value(result["v"].as<std::string>());
 
-        Database db(KVDB::load_db(db_name));
+        std::unique_ptr<kvdb::IDatabase> db(KVDB::load_db(db_name));
 
-        db.set_key_value(key, value);
+        db->set_key_value(key, value);
         return 0;
     }
 
@@ -87,9 +87,9 @@ int main(int argc, char* argv[])
 
         std::string db_name(result["n"].as<std::string>());
         std::string key(result["k"].as<std::string>());
-        Database db(KVDB::load_db(db_name));
+        std::unique_ptr<kvdb::IDatabase> db(KVDB::load_db(db_name));
 
-        cout << db.get_key_value(key) << endl;
+        cout << db->get_key_value(key) << endl;
         return 0;
     }
 
@@ -102,9 +102,9 @@ int main(int argc, char* argv[])
         }
 
         std::string db_name(result["n"].as<std::string>());
-        Database db(KVDB::load_db(db_name));
+        std::unique_ptr<kvdb::IDatabase> db(KVDB::load_db(db_name));
 
-        db.destroy();
+        db->destroy();
         return 0;
     }
 

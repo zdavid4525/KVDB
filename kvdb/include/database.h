@@ -5,28 +5,26 @@
 
 namespace kvdb {
 
-class Database
+class IDatabase
 {
 public:
-    Database(std::string db_name, std::string full_path);
+    IDatabase() = default;
 
-    std::string get_directory(void);
+    virtual ~IDatabase() = default;
 
-    void set_key_value(std::string key, std::string value);
+    virtual std::string get_directory(void) = 0;
 
-    std::string get_key_value(std::string key);
+    virtual void set_key_value(std::string key, std::string value) = 0;
 
-    static Database create_empty(std::string db_name);
+    virtual std::string get_key_value(std::string key) = 0;
 
-    static Database load(std::string db_name);
+    static const std::unique_ptr<IDatabase> create_empty(std::string db_name);
 
-    void destroy();
+    static const std::unique_ptr<IDatabase> load(std::string db_name);
 
-protected:
-    std::string name;
-    std::string full_path;
+    virtual void destroy() = 0;
+
 };
-
 }
 
 #endif // DATABASE_H

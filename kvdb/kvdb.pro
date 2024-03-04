@@ -17,6 +17,7 @@ SOURCES += \
 
 HEADERS += \
     include/database.h \
+    include/extensions/databaseext.h \
     include/kvdb.h
 
 INCLUDEPATH += include

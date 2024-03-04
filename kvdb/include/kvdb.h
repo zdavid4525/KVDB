@@ -11,9 +11,9 @@ class KVDB
 public:
     KVDB();
 
-    static Database create_empty_DB(std::string &db_name);
+    static const std::unique_ptr<IDatabase> create_empty_DB(std::string &db_name);
 
-    static Database load_db(std::string &db_name);
+    static const std::unique_ptr<IDatabase> load_db(std::string &db_name);
 };
 
 }
