@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
 
     if (result.count("c") == 1) {
         if (result.count("n") == 0) {
-            cout << "you must specify a db name. usage: ./kvdb-cli -c -n <name>" << endl;
+            cout << "you must specify a db name. usage: ./kvdb-cli -c -n <db_name>" << endl;
             print_usage();
 
             return 1;
@@ -40,21 +40,21 @@ int main(int argc, char* argv[])
 
     if (result.count("s") == 1) {
         if (result.count("n") == 0) {
-            cout << "you must specify a db name. usage: ./kvdb-cli -s -n <name>" << endl;
+            cout << "you must specify a db name. usage: ./kvdb-cli -s -n <db_name> -k <key> -v <value>" << endl;
             print_usage();
 
             return 1;
         }
 
         if (result.count("k") == 0) {
-            cout << "you must specify a key to set. usage: ./kvdb-cli -s -k <key>" << endl;
+            cout << "you must specify a key to set. usage: ./kvdb-cli -s -n <db_name> -k <key> -v <value>" << endl;
             print_usage();
 
             return 1;
         }
 
         if (result.count("v") == 0) {
-            cout << "you must specify a value to set. usage: ./kvdb-cli -c -v <value>" << endl;
+            cout << "you must specify a value to set. usage: ./kvdb-cli -s -n <db_name> -k <key> -v <value>" << endl;
             print_usage();
 
             return 1;
@@ -72,14 +72,14 @@ int main(int argc, char* argv[])
 
     if (result.count("g") == 1) {
         if (result.count("n") == 0) {
-            cout << "you must specify a db name. usage: ./kvdb-cli -s -n <name>" << endl;
+            cout << "you must specify a db name. usage: ./kvdb-cli -g -n <db_name> -k <key>" << endl;
             print_usage();
 
             return 1;
         }
 
         if (result.count("k") == 0) {
-            cout << "you must specify a key to set. usage: ./kvdb-cli -s -k <key>" << endl;
+            cout << "you must specify a key to set. usage: ./kvdb-cli -n <db_name> -g -k <key>" << endl;
             print_usage();
 
             return 1;
@@ -95,7 +95,7 @@ int main(int argc, char* argv[])
 
     if (result.count("d") == 1) {
         if (result.count("n") == 0) {
-            cout << "you must specify a db name. usage: ./kvdb-cli -s -n <name>" << endl;
+            cout << "you must specify a db name. usage: ./kvdb-cli -d -n <db_name>" << endl;
             print_usage();
 
             return 1;
