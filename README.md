@@ -1,4 +1,4 @@
-key-value store database system implemented with c++ - occasionally a project in final-year/graduate-level course csc443/csc2525 at uoft.
+nosql key-value store implemented with c++ - occasionally a project in final-year/graduate-level course csc443/csc2525 at uoft.
 
 supports:
  - database instance creation
