@@ -8,7 +8,7 @@ supports:
 
 wip:
  - retrieving all key-value pairs in a key range in key order (key 1 < key 2)
- - memtables (avl or red-black trees) and sorted string tables
+ - memtables (avl or red-black trees) and sorted string tables [IPR]
  - buffer pool caching, ideally O(1) ops
    - hashing
    - eviction
